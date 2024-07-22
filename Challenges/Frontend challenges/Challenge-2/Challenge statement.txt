@@ -1,0 +1,45 @@
+------------------
+      HTML
+------------------
+
+<div class="expected-output">
+  <hr />
+  <img src="https://public.karat.io/content/front-end-coding-exercises/user-todos.png" />
+  <hr /><br /><br />
+</div>
+
+<div id="root"></div>
+
+------------------
+      CSS
+------------------
+
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
+#root {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+------------------
+        JS
+------------------
+
+Given an API returning a list of todos, we want to fetch the list, create a separate block for each user, and display their todos in the appropriate block.
+
+Use this endpoint URL to get the todos: https://dummyjson.com/todos?limit=10&skip=80. It will return the following structure with total of 10 todos:
+{
+  "todos": [
+    {
+      "id": 1,
+      "todo": "Do something nice for someone I care about",
+      "completed": true,
+      "userId": 26
+    },
+  ],
+}
+
+Each block should contain the userId as the title of the block and the list of todos.

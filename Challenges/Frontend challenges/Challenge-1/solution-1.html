@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        body {
+            justify-content: center;
+            align-items: center;
+        }
+
+        .root {
+            width: 80%;
+            padding: 15px;
+        }
+
+        .title {
+            text-align: center;
+            font-weight: bold;
+            font-size: 24px;
+            margin-bottom: 24px;
+        }
+
+        .content {
+            position: relative;
+            overflow: hidden;
+        }
+
+        img {
+            max-width: 30vh;
+            height: 30vw;
+            float: left;
+        }
+
+        .description {
+            display: block;
+            position: relative;
+            margin-left: calc(30vh + 15px);
+            height: 30vw;
+        }
+
+        .metadata {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="root">
+        <div class="title">Lorem ipsum title.</div>
+        <div class="content">
+            <img class="image"
+                src="https://fastly.picsum.photos/id/81/536/354.jpg?hmac=CUJGGFfz-V4Oy_q1h896sGwmhTRA1CxKCkhre3ippJo" />
+            <div class="description">In publishing and graphic design, Lorem ipsum is a placeholder text commonly used
+                to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem
+                ipsum may be used as a placeholder before final copy is available.
+                <div class="metadata">Published: 12/12/2012 | Views: 22</div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

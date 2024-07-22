@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        html,
+        body {
+            height: 100%;
+            width: 100%;
+        }
+
+        #root {
+            display: flex;
+            flex-wrap: wrap;
+            background-color: darkgray;
+            justify-content: space-between;
+            flex-direction: row;
+            flex-grow: 1;
+            border-radius: 5px;
+            padding: 16px;
+
+            div.user {
+                flex: 1 1 auto;
+                background-color: white;
+                margin: 16px;
+                padding: 16px;
+                border-radius: 5px;
+
+                h3 {
+                    margin-top:0;
+                }
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="root">
+        <div>first</div>
+        <div>second</div>
+        <div>thirds</div>
+    </div>
+    <script>
+        let todosList;
+        async function getTodos() {
+            const response = await fetch('https://dummyjson.com/c/2a59-6af1-4fa7-82cd').then((response) => response.json())
+                .then((json) => {
+                    this.todosList = json.todos;
+                });
+        };
+
+        getTodos().then(() => {
+            let innerHtml = "";
+            for (let i = 0; i < this.todosList.length; i++) {
+                const currentItem = this.todosList[i];
+                innerHtml += `<div id="${currentItem.id}" class="user">
+                    <h3>User # ${currentItem.userId}</h3>
+                    <div>${currentItem.todo}</div>
+                    </div>`;
+            }
+            document.getElementById("root").innerHTML = innerHtml;
+        });
+
+
+    </script>
+
+</body>
+
+</html>

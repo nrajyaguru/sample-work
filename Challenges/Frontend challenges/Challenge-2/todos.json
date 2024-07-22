@@ -1,0 +1,67 @@
+{
+    "todos": [
+        {
+            "id": 81,
+            "todo": "Organize dresser",
+            "completed": false,
+            "userId": 72
+        },
+        {
+            "id": 82,
+            "todo": "Fix something that's broken in house",
+            "completed": false,
+            "userId": 13
+        },
+        {
+            "id": 83,
+            "todo": "Play a video game",
+            "completed": false,
+            "userId": 37
+        },
+        {
+            "id": 84,
+            "todo": "Listen to music you haven't heard in a while",
+            "completed": true,
+            "userId": 156
+        },
+        {
+            "id": 85,
+            "todo": "Look at finances and find one way to save money",
+            "completed": false,
+            "userId": 207
+        },
+        {
+            "id": 86,
+            "todo": "Learn the periodic table",
+            "completed": false,
+            "userId": 13
+        },
+        {
+            "id": 87,
+            "todo": "Make a budget",
+            "completed": false,
+            "userId": 167
+        },
+        {
+            "id": 88,
+            "todo": "Donate blood at a local blood center",
+            "completed": true,
+            "userId": 9
+        },
+        {
+            "id": 89,
+            "todo": "Go to the library and find an interesting book",
+            "completed": true,
+            "userId": 107
+        },
+        {
+            "id": 90,
+            "todo": "Configure two-factor authentication on accounts",
+            "completed": true,
+            "userId": 175
+        }
+    ],
+    "total": 254,
+    "skip": 80,
+    "limit": 10
+}
