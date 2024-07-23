@@ -1,0 +1,35 @@
+<div id="root"></div>
+CSS:-
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
+#root {
+  display: flex;
+  background-color: #fff;
+  color: #000;
+}
+JS:-
+/*
+Given a database of the todos added by our users and an API endpoint that returns 50 todos at a time.
+Currently, the product has three premium users with userId 15, 27, and 39.
+We want to build a new page that will display the following:
+* The list of the first five todos of each premium user
+* Todos that are completed should have a different color
+
+You can get the todos from this endpoint https://dummyjson.com/todos?limit=50&skip=${skip}. The endpoint can return only 50 todos at a time, and you are allowed to modify only the skip parameter.
+
+The endpoint will return this structure:
+Total of 50 todos
+{
+  "todos": [
+    {
+      "id": 1,
+      "todo": "Do something nice for someone I care about",
+      "completed": true,
+      "userId": 26
+    },
+    ...
+  ],
+}

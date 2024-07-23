@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        html,
+        body {
+            height: 100%;
+            width: 100%;
+        }
+
+        #root {
+            display: flex;
+            flex-wrap: wrap;
+            background-color: darkgray;
+            justify-content: space-between;
+            flex-direction: row;
+            flex-grow: 1;
+            border-radius: 5px;
+            padding: 16px;
+
+            div.user {
+                flex: 1 1 auto;
+                background-color: white;
+                margin: 16px;
+                padding: 16px;
+                border-radius: 5px;
+
+                h3 {
+                    margin-top: 0;
+                }
+
+                .completed {
+                    color: white;
+                    background-color: lightgreen;
+                }
+
+                .todo {
+                    margin-top: 4px;
+                    padding: 8px;
+                    border-radius: 4px;
+                }
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="root">
+    </div>
+    <script>
+        let todosList = [
+            {
+                "id": 81,
+                "todo": "Organize dresser",
+                "completed": true,
+                "userId": 72
+            },
+            {
+                "id": 82,
+                "todo": "Fix something that's broken in house",
+                "completed": true,
+                "userId": 13
+            },
+            {
+                "id": 83,
+                "todo": "Play a video game",
+                "completed": false,
+                "userId": 72
+            },
+            {
+                "id": 84,
+                "todo": "Listen to music you haven't heard in a while",
+                "completed": true,
+                "userId": 72
+            },
+            {
+                "id": 85,
+                "todo": "Look at finances and find one way to save money",
+                "completed": false,
+                "userId": 13
+            },
+            {
+                "id": 86,
+                "todo": "Learn the periodic table",
+                "completed": false,
+                "userId": 13
+            },
+            {
+                "id": 87,
+                "todo": "Make a budget",
+                "completed": true,
+                "userId": 72
+            },
+            {
+                "id": 88,
+                "todo": "Donate blood at a local blood center",
+                "completed": true,
+                "userId": 9
+            },
+            {
+                "id": 89,
+                "todo": "Go to the library and find an interesting book",
+                "completed": true,
+                "userId": 13
+            },
+            {
+                "id": 90,
+                "todo": "Configure two-factor authentication on accounts",
+                "completed": true,
+                "userId": 9
+            }
+        ];
+        let innerHTML = '';
+        const todosByUserIds = Object.groupBy(todosList, ({ userId }) => userId);
+
+        Object.keys(todosByUserIds).forEach((userId) => {
+            const todosByUserId = todosByUserIds[userId];
+            innerHTML += `<div id="${userId}" class="user"><h3>User # ${userId}</h3>`;
+
+            for (let i = 0; i < todosByUserId.length; i++) {
+                const currentItem = todosByUserId[i];
+                if (currentItem.completed)
+                    innerHTML += `<div class="completed todo">${currentItem.todo}</div>`;
+                else
+                    innerHTML += `<div class="todo">${currentItem.todo}</div>`;
+
+            }
+            innerHTML += '</div>';
+        });
+
+        document.getElementById("root").innerHTML = (innerHTML);
+
+
+
+    </script>
+
+</body>
+
+</html>
