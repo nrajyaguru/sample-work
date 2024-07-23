@@ -1,0 +1,98 @@
+------------------
+      HTML
+------------------
+
+<div id="prompt">
+  <hr />
+  <p>Given an initial functionality with a filter input and the list of articles.</p>
+  <p>Complete the functionality by adding the following:
+    <uol>
+      <li>When the user types in the filter input, the article list should be filtered and display the list of articles that contain the typed string.</li>
+      <li>The found string(s) in each article should be highlighted as in the following image:</li>
+      <img src="https://public.karat.io/content/front-end-coding-exercises/p2-1b-article-filter.png" width="25%" height="25%" />
+      <li>Partial words, including individual letters, should be highlighted.</li>
+    </ul>
+  </p>
+  <p>The highlighted strings should at least have white color and red background.</p>
+  <hr /><br /><br />
+</div>
+
+<div class="container">
+  <div class="input-container">
+    <input type="text" name="filter" id="filterInput">
+  </div>
+  
+  <ul id="articles">
+    <li>Parley matey Davy Jones Locker</li>
+    <li>Parley handsomely kick Jack Tar</li>
+    <li>Holystone careen Shiver me jack</li>
+    <li>Nelsons folly list account league</li>
+    <li>Gold Road league chase skysail</li>
+    <li>Keel crimp holystone fluke yo-ho-ho</li>
+    <li>Grog heave to crimp line warp</li>
+    <li>Pressgang grog blossom</li>
+    <li>Lubber crack Jennys chase guns pink</li>
+    <li>Hearties aye Chain Shot parley</li>
+  </ul>
+</div>
+
+------------------
+      CSS
+------------------
+
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  background-color: #fff;
+  color: #000;
+}
+
+.input-container {
+  display: flex;
+}
+
+input {
+  height: 30px;
+  width: 250px;
+  border-radius: 10px;
+  padding: 5px;
+  padding-left: 15px;
+  border: 1px solid #ccc;
+}
+
+ul li {
+  margin-top: 10px;
+}
+
+------------------
+        JS
+------------------
+
+const filterInput = document.getElementById("filterInput");
+
+filterInput.oninput = (e) => {
+  setTimeout(() => {
+    const value = e.target.value;
+    const articles = document.querySelectorAll("#articles li");
+    
+    articles.forEach(article => {
+      const words = article.innerText;
+      
+      if (!value) {
+        return;
+      }
+
+      if (words.includes(value)) {
+
+      } else {
+
+      }
+    });
+  }, 500);
+};

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        html,
+        body {
+            height: 100%;
+            width: 100%;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+            background-color: #fff;
+            color: #000;
+        }
+
+        .input-container {
+            display: flex;
+        }
+
+        input {
+            height: 30px;
+            width: 250px;
+            border-radius: 10px;
+            padding: 5px;
+            padding-left: 15px;
+            border: 1px solid #ccc;
+        }
+
+        ul li {
+            margin-top: 10px;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .highlight {
+            color: white;
+            background-color: red;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="input-container">
+            <input type="text" name="filter" id="filterInput">
+        </div>
+
+        <ul id="articles">
+            <li>Parley matey Davy Jones Locker</li>
+            <li>Parley handsomely kick Jack Tar</li>
+            <li>Holystone careen Shiver me jack</li>
+            <li>Nelsons folly list account league</li>
+            <li>Gold Road league chase skysail</li>
+            <li>Keel crimp holystone fluke yo-ho-ho</li>
+            <li>Grog heave to crimp line warp</li>
+            <li>Pressgang grog blossom</li>
+            <li>Lubber crack Jennys chase guns pink</li>
+            <li>Hearties aye Chain Shot parley</li>
+        </ul>
+    </div>
+    <script>
+        const filterInput = document.getElementById("filterInput");
+
+        filterInput.oninput = (e) => {
+            setTimeout(() => {
+                const value = e.target.value;
+                const articles = document.querySelectorAll("#articles li");
+
+                articles.forEach(article => {
+                    const words = article.textContent;
+
+                    if (!value) {
+                        article.innerHTML = words;
+                        article.classList.remove('hidden');
+                        return;
+                    }
+
+                    if (words.includes(value)) {
+                        const regex = new RegExp(`(${value})`, 'gi');
+                        article.innerHTML = words.replace(regex, '<span class="highlight">$1</span>');
+
+                        article.classList.remove('hidden');
+                    } else {
+                        article.innerHTML = words;
+                        article.classList.add('hidden');
+                    }
+                });
+            }, 500);
+        };
+    </script>
+
+</body>
+
+</html>
