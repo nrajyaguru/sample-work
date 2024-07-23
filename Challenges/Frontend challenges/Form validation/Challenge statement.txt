@@ -1,0 +1,117 @@
+<div id="prompt">
+  <hr />
+  <p>Given a form to add new users to the User List on the right side of the form.</p>
+  <p>Add the following form validations to validate the form and display validation errors if there are any:</p>
+  <ul>
+    <li>If the "First name" or "Last name" inputs are empty, the user is not added. The validation already exists, but the error messages for inputs are not displayed. If the inputs are empty during the submission, display an error message for each input that will indicate the inputs should not be empty.</li>
+    <li>If the user to submit already exists in the "User List", it should not be added again. When clicking on the "Submit" button, the inputs should be highlighted, and only one error message should be shown above the "Submit" button, indicating that the user already exists.</li>
+  </ul>
+
+  <p>The rules to indicate that an input is invalid:</p>
+  <ul>
+    <li>Red borders</li>
+    <li>Error message with red text under the input</li>
+  </ul>
+
+  <p>Example layout:</p>
+  <img src="https://public.karat.io/content/front-end-coding-exercises/p2-1a-error-layout.png" width="25%" height="25%" />
+  <hr /><br /><br />
+</div>
+
+<div id="root">
+  <div class="left">
+    <div class="input-container">
+      <label>First name</label>
+      <input type="text" name="firstName" id="firstName">
+    </div>
+    
+    <div class="input-container">
+      <label>Last Name</label>
+      <input type="text" name="lastName" id="lastName">
+    </div>
+
+    <button id="submitBtn">Submit</button>
+  </div>
+  
+  <div class="right">
+    <h3>User List</h3>
+    
+    <ol id="user-list">
+    </ol>
+  </div>
+</div>
+
+css:-
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
+#root {
+  display: flex;
+  background-color: #fff;
+  color: #000;
+}
+
+.right {
+  margin-left: 50px;  
+  margin-top: 20px;
+}
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+  padding: 10px;
+  max-width: 250px;
+  justify-content: flex-start;
+}
+
+input {
+  height: 30px;
+  width: 250px;
+  border-radius: 10px;
+  padding: 5px;
+  padding-left: 15px;
+  border: 1px solid #ccc;
+}
+
+button {
+  height: 42px;
+  width: 100px;
+  background-color: dodgerblue;
+  color: #fff;
+  font-weight: bold;
+  border: 1px solid dodgerblue;
+  border-left: 0;
+  border-radius: 10px;
+  margin: 20px;
+  cursor: pointer;
+}
+
+JS:-
+function isValid(value) {
+  if (value === undefined || value === null || value.length === 0) {
+    return false;
+  }
+  return true;
+}
+
+const inputs = document.querySelectorAll("input");
+const submitBtn = document.getElementById("submitBtn");
+
+submitBtn.onclick = () => {
+  const firstName = document.getElementById("firstName").value;
+  const lastName = document.getElementById("lastName").value;
+  
+  if (!isValid(firstName) || !isValid(lastName)) {
+    return;
+  }
+
+  const userList = document.getElementById("user-list");
+
+  const newUser = document.createElement("li");
+  newUser.innerText = `${firstName} ${lastName}`;
+  
+  userList.appendChild(newUser);
+};
