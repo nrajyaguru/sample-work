@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        html,
+        body {
+            height: 100%;
+            width: 100%;
+        }
+
+        #root {
+            display: flex;
+            flex-direction: column;
+            background-color: #fff;
+            color: #000;
+
+            button {
+                max-height: 21px;
+            }
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="root">
+        <div id="total">0</div>
+        
+        <button id="loadMore" onclick="loadMoreData()">Load more</button>
+        
+        <div id="container"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -44,7 +44,7 @@
     <script>
         let todosList;
         async function getTodos() {
-            const response = await fetch('https://dummyjson.com/c/2a59-6af1-4fa7-82cd').then((response) => response.json())
+            const response = await fetch('https://dummyjson.com/todos?limit=20&skip=0').then((response) => response.json())
                 .then((json) => {
                     this.todosList = json.todos;
                 });
