@@ -1,0 +1,105 @@
+HTML:
+
+<div id="root"> <div class="left"> <div class="input-container"> <label>Username</label> <inputtype="text" name="username"> <span class="error-msg">Invalid Username</span> </div>
+&lt;div class=&quot;input-container&quot;&gt; &lt;label&gt;Password&lt;/label&gt; &lt;input type=&quot;password&quot; name=&quot;password&quot;&gt; &lt;span class=&quot;error-msg&quot;&gt;Invalid password&lt;/span&gt; &lt;/div&gt; &lt;div class=&quot;input-container&quot;&gt; &lt;label&gt;Confirm Password&lt;/label&gt; &lt;input type=&quot;password&quot; name=&quot;confirmPassword&quot;&gt; &lt;span class=&quot;error-msg&quot;&gt;Passwords do not match&lt;/span&gt; &lt;/div&gt; &lt;div class=&quot;input-container&quot;&gt; &lt;label&gt;Is Employed&lt;/label&gt; &lt;input type=&quot;checkbox&quot; name=&quot;isEmployed&quot;&gt; &lt;span class=&quot;error-msg&quot;&gt;Passwords do not match&lt;/span&gt; &lt;/div&gt; &lt;div class=&quot;input-container&quot;&gt; &lt;label&gt;Company Name&lt;/label&gt; &lt;input type=&quot;text&quot; name=&quot;companyName&quot; id=&quot;companyName&quot; disabled&gt; &lt;span class=&quot;error-msg&quot;&gt;Invalid Company Name&lt;/span&gt; &lt;/div&gt; &lt;div class=&quot;input-container&quot;&gt; &lt;label&gt;Email&lt;/label&gt; &lt;input type=&quot;text&quot; name=&quot;email&quot; disabled&gt; &lt;span class=&quot;error-msg&quot;&gt;Invalid Email&lt;/span&gt; &lt;/div&gt; &lt;div class=&quot;input-container&quot;&gt; &lt;label&gt;Phone Number&lt;/label&gt; &lt;input type=&quot;text&quot; name=&quot;phoneNumber&quot; disabled&gt; &lt;span class=&quot;error-msg&quot;&gt;Invalid Phone Number&lt;/span&gt; &lt;/div&gt; &lt;button id=&quot;submitBtn&quot;&gt;Submit&lt;/button&gt;&lt;/div&gt; &lt;div class=&quot;right&quot;&gt; &lt;label&gt;My Income Sources&lt;/label&gt; &lt;div class=&quot;input-container&quot;&gt; &lt;label&gt;I Have Passive Income&lt;/label&gt; &lt;input type=&quot;radio&quot; name=&quot;passiveIncome&quot;&gt; &lt;/div&gt; &lt;div class=&quot;input-container&quot;&gt; &lt;label&gt;I Don&#39;t Have Passive Income&lt;/label&gt; &lt;input type=&quot;radio&quot; name=&quot;passiveIncome&quot;&gt; &lt;/div&gt;&lt;/div&gt; &lt;/div&gt; </code>
+
+CSS:
+
+html, body { height: 100%; width: 100%; }
+#root {
+display: flex;
+background-color: #fff;
+color: #000;
+}
+.right {
+margin-left: 50px;
+21/05/2024, 11:38 Karat^ Deepak Result
+https://atlassian.karat.io/interviews/682541/pdf 10/14
+margin-top: 20px;
+}
+.input-container {
+display: flex;
+flex-direction: column;
+margin: 10px;
+padding: 10px;
+max-width: 250px;
+justify-content: flex-start;
+}
+input:not([type=checkbox]), input:not([type=radio]) {
+height: 30px;
+width: 250px;
+border-radius: 10px;
+padding: 5px;
+padding-left: 15px;
+border: 1px solid #ccc;
+}
+input[type=checkbox], input[type=radio]{
+height: 30px;
+width: 20px;
+padding: 0;
+margin:0;
+}
+button {
+height: 42px;
+width: 100px;
+background-color: dodgerblue;
+color: #fff;
+font-weight: bold;
+border: 1px solid dodgerblue;
+border-left: 0;
+border-radius: 10px;
+margin: 20px;
+cursor: pointer;
+}
+.error-msg {
+margin-top: 5px;
+color: red;
+display: none;
+}
+.invalid input {
+border: 1px solid red;
+}
+.invalid .error-msg {
+display: flex;
+}
+</code>
+
+JavaScript:
+
+/* We have a form where users submit their personal information. Recently we got complaints that itdoesn't work as expected.
+We identified the following issues that need fixing:
+All invalid inputs get highlighted when clicking on the Submit button. This is correct, but thedisabled inputs should not get highlighted (Email and Phone Number, "Company Name" if the "IsEmployed" checkbox is unchecked).
+When the "Is Employed" checkbox is checked, the "Company Name" input gets enabled, and theuser can type a value there. When we uncheck the "Is Employed" checkbox, the "Company Name"
+21/05/2024, 11:38 Karat^ Deepak Result
+https://atlassian.karat.io/interviews/682541/pdf 11/14
+input should reset its value and be empty. Currently, it does not.
+When the "Is Employed" checkbox is checked, the "My Income Sources" radio buttons shouldchange to the "I Have Passive Income" checkbox. It should be checked if the "I Have PassiveIncome" radio button was selected. When the "Is Employed" checkbox is unchecked, the radiobuttons should be shown again, and the appropriate radio button should be selected based on thecheckbox state.
+*/
+const isEmployed = document.querySelector("input[type=checkbox]");
+isEmployed.addEventListener('change', function() {
+const companyName = document.getElementById("companyName");
+companyName.disabled = !companyName.disabled;
+});
+function isValid(value) {
+if (!(/^[a-z0-9]+$/i).test(value)) {
+return false;
+}
+if (value.length > 10 || value.length < 3) {
+return false;
+}
+return true;
+}
+const inputs = document.querySelectorAll("input:not([type=checkbox])");
+inputs.forEach(input => {
+input.addEventListener('change', function() {
+if (isValid(input.value)) {
+input.parentElement.classList.remove("invalid");
+} else {
+input.parentElement.classList.add("invalid");
+}
+});
+});
+const submitBtn = document.getElementById("submitBtn");
+submitBtn.onclick = () => {
+const inputs = document.querySelectorAll("input:not([type=checkbox])");
+inputs.forEach(input =&gt; { if (isValid(input.value)) { input.parentElement.classList.remove(&quot;invalid&quot;); } else { input.parentElement.classList.add(&quot;invalid&quot;); }}); };

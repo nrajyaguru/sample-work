@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        html,
+        body {
+            height: 100%;
+            width: 100%;
+        }
+
+        #root {
+            display: flex;
+            background-color: #fff;
+            color: #000;
+        }
+
+        .right {
+            margin-left: 50px;
+            margin-top: 20px;
+        }
+
+        .input-container {
+            display: flex;
+            flex-direction: column;
+            margin: 10px;
+            padding: 10px;
+            max-width: 250px;
+            justify-content: flex-start;
+        }
+
+        input:not([type=checkbox]),
+        input:not([type=radio]) {
+            height: 30px;
+            width: 250px;
+            border-radius: 10px;
+            padding: 5px;
+            padding-left: 15px;
+            border: 1px solid #ccc;
+        }
+
+        input[type=checkbox],
+        input[type=radio] {
+            height: 30px;
+            width: 20px;
+            padding: 0;
+            margin: 0;
+        }
+
+        button {
+            height: 42px;
+            width: 100px;
+            background-color: dodgerblue;
+            color: #fff;
+            font-weight: bold;
+            border: 1px solid dodgerblue;
+            border-left: 0;
+            border-radius: 10px;
+            margin: 20px;
+            cursor: pointer;
+        }
+
+        .error-msg {
+            margin-top: 5px;
+            color: red;
+            display: none;
+        }
+
+        .invalid input {
+            border: 1px solid red;
+        }
+
+        .invalid .error-msg {
+            display: flex;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="root">
+        <div id="total">0</div>
+
+        <button id="loadMore" onclick="loadMoreData()">Load more</button>
+
+        <div id="container"></div>
+    </div>
+    <div id="root">
+        <div class="left">
+            <div class="input-container">
+                <label for="username">Username</label>
+                <input type="text" name="username" id="username">
+                <span class="error-msg">Invalid Username</span>
+            </div>
+            <div class="input-container">
+                <label for="password">Password</label>
+                <input type="password" name="password" id="password">
+                <span class="error-msg">Invalid Password</span>
+            </div>
+            <div class="input-container">
+                <label for="confirmPassword">Confirm Password</label>
+                <input type="password" name="confirmPassword" id="confirmPassword">
+                <span class="error-msg">Passwords do not match</span>
+            </div>
+            <div class="input-container">
+                <label for="isEmployed">Is Employed</label>
+                <input type="checkbox" name="isEmployed" id="isEmployed">
+                <span class="error-msg">Error message</span> <!-- Placeholder error message -->
+            </div>
+            <div class="input-container">
+                <label for="companyName">Company Name</label>
+                <input type="text" name="companyName" id="companyName" disabled>
+                <span class="error-msg">Invalid Company Name</span>
+            </div>
+            <div class="input-container">
+                <label for="email">Email</label>
+                <input type="text" name="email" id="email" disabled>
+                <span class="error-msg">Invalid Email</span>
+            </div>
+            <div class="input-container">
+                <label for="phoneNumber">Phone Number</label>
+                <input type="text" name="phoneNumber" id="phoneNumber" disabled>
+                <span class="error-msg">Invalid Phone Number</span>
+            </div>
+            <button id="submitBtn">Submit</button>
+        </div>
+        <div class="right">
+            <label>My Income Sources</label>
+            <div class="input-container">
+                <label for="passiveIncome">I Have Passive Income</label>
+                <input type="radio" name="incomeSource" id="passiveIncome">
+            </div>
+            <!-- Additional radio buttons or other content can be added here -->
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
