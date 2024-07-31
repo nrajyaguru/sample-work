@@ -15,6 +15,10 @@ TDD in frontend
 Round 1: design a sample router 
 Round 2: design a voting system
 
+Create a file directory structure using some JSON data provided 
+
+In Browser coding interview I was asked to develop a dynamic hierarchical menu where it can have multiple levels. 
+
 Build a widget in javascript
 
 Build a comment list. 
@@ -24,8 +28,6 @@ Promises questions and the focus was on modularize code which is performant and 
 standard API Rate Limiter LLD question 
 
 Low level Design of api rate limiter with executing code.
-
-Design a rate limiter.
 
 Promise / Async related problem - Designing a Kanban board - HTML semantics and accessibilitys
 
@@ -96,6 +98,3 @@ the security problems in the Web, how to prevent them in the traditional website
 
 Curry function. function declaration and function expression difference in ES5 and ES6. these two question is code test.
 
-Create a file directory structure using some JSON data provided 
-
-In Browser coding interview I was asked to develop a dynamic hierarchical menu where it can have multiple levels. 

@@ -9,6 +9,8 @@ input: /bar/qw/ert should route to lets say result input /bar/*/ert should also 
 
 Design and write the code for a router service . input: /bar/qw/ert---> result input /bar/*/ert--->result
 
+Design a rate limiter.
+
 Design a Task Scheduler
 
 Design a system where you can schedule events to happen at a later point in time.
