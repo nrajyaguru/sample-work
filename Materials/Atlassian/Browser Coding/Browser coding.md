@@ -29,7 +29,7 @@ standard API Rate Limiter LLD question
 
 Low level Design of api rate limiter with executing code.
 
-Promise / Async related problem - Designing a Kanban board - HTML semantics and accessibilitys
+HTML semantics and accessibilitys
 
 build a navigation tree
 
@@ -47,8 +47,6 @@ Snake game ( not snake ladder )
 Snake design problem, I got its variant
 https://leetcode.com/problems/design-snake-game/
 
-Design the UI/UX experience of a Jira board (personal and team).
-
 Router ( middleware / file syatem)
 
 check how to run test cases in javascript & angular react in general
@@ -57,24 +55,15 @@ think in components and testability
 
 ins and outs of vanilla JavaScript (ES6+) including page life cycle events
 
-Javascript focused, promises
-
-Can you explain what promises are in Javascript?
-
-
-What's the difference between undefined and null?
-
 prepfully.com/practice-interviews
 
-develop the given problem statement using any frontend framework (recursive)
+What's the difference between undefined and null?
 
 About javascript prototype, this scope.
 
 Why would you chose let over var, const over let
 
 The decimal to 7 based conversion. 
-
-Prepare the recursion. 
 
 A robot game. not very difficult. 
 
@@ -94,7 +83,7 @@ difference between the async function and normal function.
 
 map and WeakMap difference. (mentioned the GC, how to implement the GC in the JS)?
 
-the security problems in the Web, how to prevent them in the traditional website or in the React ? (XSS, CSRF)
+the security problems in the Web, how to prevent them in the traditional website or in the React  or in Angualr? (XSS, CSRF)
 
 Curry function. function declaration and function expression difference in ES5 and ES6. these two question is code test.
 

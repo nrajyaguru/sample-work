@@ -11,6 +11,10 @@ Design and write the code for a router service . input: /bar/qw/ert---> result i
 
 Design a rate limiter.
 
+Design the UI/UX experience of a Jira board (personal and team).
+
+Designing a Kanban board
+
 Design a Task Scheduler
 
 Design a system where you can schedule events to happen at a later point in time.
