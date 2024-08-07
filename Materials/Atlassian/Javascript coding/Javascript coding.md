@@ -16,7 +16,7 @@ build a feature flag library
 
 Design a file tag system or voting system.
 
-JS question: implement a JS solution for fetching/reading feature flags from an API.
+JS question: implement a JS solution for fetching-reading feature flags from an API.
 How would you improve performance, caching, share across different apps
 
-develop a common module that can be used by multiple applications to fetch db data for given key. (memoization)
+Develop a common module that can be used by multiple applications to fetch db data for given key. (memoization)
