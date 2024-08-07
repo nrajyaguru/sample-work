@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Calendar widget</title>
+    <meta name="description" content="Calendar widget">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <div id="calendar-widget">
+        <button onclick="changeMonth(-1)">Previous</button>
+        <span id="month-year"></span>
+        <button onclick="changeMonth(1)">Next</button>
+        <div id="calendar-days"></div>
+    </div>
+    <script src="./calendar-widget.js" defer></script>
+</body>
+
+</html>

@@ -1,0 +1,35 @@
+#calendar-widget {
+    font-family: Arial, sans-serif;
+    border: 1px solid #ddd;
+    padding: 16px;
+    width: 350px;
+    max-width: 100%;
+    text-align: center;
+}
+
+#calendar-widget button {
+    margin: 0 8px;
+    padding: 8px 16px;
+}
+
+#calendar-days {
+    display: grid;
+    grid-template-columns: repeat(7,1fr);
+    gap: 2px;
+    margin-top: 10px;
+}
+
+.day {
+    padding: 8px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+.header {
+    font-weight: bold;
+    background-color: #f4fef4;
+}
+
+.current-day {
+    background-color: #e0e0e0;
+}
